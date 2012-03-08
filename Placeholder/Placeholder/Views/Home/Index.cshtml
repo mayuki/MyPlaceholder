@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Placeholder Image";
+    var urlBase = Request.Url.ToString().TrimEnd('/');
+}
+<h1>Placeholder Image</h1>
+<h2>Syntax (compatible with <a href="http://placehold.it/">placehold.it</a>)</h2>
+<ul>
+<li><a href="@urlBase/150">@urlBase/150<br /><img src="@urlBase/150" /></a></li>
+<li><a href="@urlBase/150x100">@urlBase/150x100<br /><img src="@urlBase/150x100" /></a></li>
+<li><a href="@urlBase/150x100/fef0f0">@urlBase/150x100/fef0f0<br /><img src="@urlBase/150x100/fef0f0" /></a></li>
+<li><a href="@urlBase/150x100/fef0f0/0c0c0c">@urlBase/150x100/fef0f0/0c0c0c<br /><img src="@urlBase/150x100/fef0f0/0c0c0c" /></a></li>
+<li><a href="@urlBase/150x100?text=Hauhau">@urlBase/150x100?text=Hauhau<br /><img src="@urlBase/150x100?text=Hauhau" /></a></li>
+</ul>
