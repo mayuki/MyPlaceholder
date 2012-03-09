@@ -1,6 +1,19 @@
 ﻿@{
     ViewBag.Title = "Placeholder Image";
-    var urlBase = Request.Url.ToString().TrimEnd('/');
+
+    var uriBuilder = new UriBuilder
+    {
+        Host = Request.Url.Host,
+        Path = "/",
+        Port = 80,
+        Scheme = "http",
+    };
+    if (Request.IsLocal)
+    {
+        uriBuilder.Port = Request.Url.Port;
+    }
+
+    var urlBase = new Uri(uriBuilder.Uri, Request.Url.PathAndQuery).AbsoluteUri.TrimEnd('/');
 }
 <h1>Placeholder Image</h1>
 <h2>Syntax (compatible with <a href="http://placehold.it/">placehold.it</a>)</h2>
